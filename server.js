@@ -10,7 +10,7 @@ const io = require('socket.io')(server);
 // This is used to randomly generate Ids for rooms
 const {v4: uuidV4} = require('uuid');
 
-server.listen(3000);
+server.listen(3001);
 
 // Sets how the server will handle views
 app.set('view engine', 'ejs');
@@ -30,6 +30,6 @@ app.get('/:room', (req, res) => {
 
 io.on('connection', socket => {
     socket.on('join-room', (roomId, userId) => {
-        // console.log(roomId, userId);
+        console.log(roomId, userId);
     });
 });
