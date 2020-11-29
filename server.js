@@ -29,7 +29,10 @@ app.get('/:room', (req, res) => {
 })
 
 io.on('connection', socket => {
+    // This event is declared in script.js
     socket.on('join-room', (roomId, userId) => {
-        console.log(roomId, userId);
+        socket.join(roomId);
+        // Emits event to everyone on socket (in room) 
+        socket.to(roomId).broadcast.emit('user-connected', userId);
     });
 });
