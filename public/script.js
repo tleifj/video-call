@@ -1,11 +1,13 @@
 const socket = io();
 // Get video grid
 const videoGrid = document.getElementById('video-grid');
-console.log(videoGrid);
 // Create video element
 const myVideo = document.createElement('video');
 // Make created video muted so we don't hear ourselves
 myVideo.muted = true;
+
+// Keep track of all the calls we're connected to.
+const peers = {};
 
 // Get the users video and audio
 navigator.mediaDevices.getUserMedia({
@@ -22,7 +24,7 @@ navigator.mediaDevices.getUserMedia({
         // Creates a new video element to add to our page
         const video = document.createElement('video');
 
-        
+
         call.on('stream', userVideoStream => {
             addVideoStream(video, userVideoStream);
         })
@@ -33,6 +35,15 @@ navigator.mediaDevices.getUserMedia({
     });
 });
 
+// Listen for user disconnected
+socket.on('user-disconnected', userId => {
+    console.log('disconnected');
+    // Closes the call with that user
+    if (peers[userId]) {
+        peers[userId].close();
+    }
+    
+});
 // Connect to Peer server on port 3002
 const myPeer = new Peer(undefined, {
     host: '/',
@@ -59,6 +70,9 @@ function addVideoStream(video, stream) {
 function connectToNewUser(userId, stream) {
     // Creates a PeerJS call
     const call = myPeer.call(userId, stream);
+
+    // Add call to list of calls connected to
+    peers[userId] = call;
 
     // Creates a new video element to add to our page
     const video = document.createElement('video');

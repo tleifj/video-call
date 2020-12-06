@@ -32,7 +32,14 @@ io.on('connection', socket => {
     // This event is declared in script.js
     socket.on('join-room', (roomId, userId) => {
         socket.join(roomId);
-        // Emits event to everyone on socket (in room) 
+        // Emits event "user connected" to everyone on socket (in room) 
         socket.to(roomId).broadcast.emit('user-connected', userId);
+
+        socket.on('disconnect', () => {
+            // Emits event "user discconnected" to everyone on socket (in room) 
+            socket.to(roomId).broadcast.emit('user-disconnected', userId);
+        })
     });
+
+    
 });
