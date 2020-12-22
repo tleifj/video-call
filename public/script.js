@@ -45,11 +45,7 @@ socket.on('user-disconnected', userId => {
     
 });
 // Connect to Peer server on port 3002
-const myPeer = new Peer(undefined, {
-    secure: true, 
-    host: 'video-call-tleifj.herokuapp.com', 
-    port: 443,
-})
+const myPeer = new Peer()
 
 
 
