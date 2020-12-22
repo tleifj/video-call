@@ -10,7 +10,7 @@ const io = require('socket.io')(server);
 // This is used to randomly generate Ids for rooms
 const {v4: uuidV4} = require('uuid');
 
-server.listen(3001);
+server.listen(process.env.PORT || 3001);
 
 // Sets how the server will handle views
 app.set('view engine', 'ejs');
