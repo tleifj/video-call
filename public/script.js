@@ -38,14 +38,18 @@ navigator.mediaDevices.getUserMedia({
     console.log(stream.getAudioTracks());
 
     const audioMute = document.getElementById('audio-mute');
-    audioMute.addEventListener('click', () => {
+    audioMute.addEventListener('click', function() {
         stream.getAudioTracks()[0].enabled = !(stream.getAudioTracks()[0].enabled);
+        this.classList.toggle('video-control--active')
     })
 
     const videoMute = document.getElementById('video-mute');
-    videoMute.addEventListener('click', () => {
+    videoMute.addEventListener('click', function() {
         stream.getVideoTracks()[0].enabled = !(stream.getVideoTracks()[0].enabled);
+        this.classList.toggle('video-control--active')
     })
+
+    
 
 });
 

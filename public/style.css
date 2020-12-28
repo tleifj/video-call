@@ -43,11 +43,23 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
+    transition: all 0.3s;
 }
 
 .video-control:hover {
     cursor: pointer;
+    background-color: rgba(236, 57, 44, 0.2);
 }
+
+.video-control--active {
+    background-color: rgb(236, 57, 44);
+}
+
+.video-control--active:hover {
+    background-color: rgb(236, 57, 44);
+}
+
+
 
 .video-control svg {
     position: absolute;
