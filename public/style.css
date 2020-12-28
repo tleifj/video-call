@@ -1,5 +1,16 @@
 body {
     background: rgb(0, 12, 17);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+}
+
+.container {
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   padding-top:30vh;
 }
 
 .button {
@@ -8,6 +19,11 @@ body {
     border-radius: 3px;
     text-decoration: none;
     color: white;
+}
+
+.button--large {
+    font-size: 18px;
+    padding: 18px 28px;
 }
 
 #video-grid {
@@ -19,7 +35,7 @@ body {
 }
 
 #video-grid video {
-    max-width: 768px;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -63,9 +79,12 @@ body {
 
 .video-control svg {
     position: absolute;
+    height: 48px;
+    width: 48px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-50% + 3px));}
+    transform: translate(-50%, calc(-50% + 3px));
+}
 
 .video-control svg path {
 fill: #fff;
