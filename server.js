@@ -18,8 +18,13 @@ app.set('view engine', 'ejs');
 // Sets public folder for server
 app.use(express.static('public'));
 
-// On root, redirect to a random room
+// On root, render homepage
 app.get('/', (req, res) => {
+    res.render('index');
+});
+
+// On new-room, redirect to a random room
+app.get('/new-room', (req, res) => {
     res.redirect(`/${uuidV4()}`);
 });
 

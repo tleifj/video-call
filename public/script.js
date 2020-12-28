@@ -6,6 +6,7 @@ const myVideo = document.createElement('video');
 // Make created video muted so we don't hear ourselves
 myVideo.muted = true;
 
+
 // Keep track of all the calls we're connected to.
 const peers = {};
 
@@ -33,6 +34,19 @@ navigator.mediaDevices.getUserMedia({
     socket.on('user-connected', userId => {
         connectToNewUser(userId, stream);
     });
+
+    console.log(stream.getAudioTracks());
+
+    const audioMute = document.getElementById('audio-mute');
+    audioMute.addEventListener('click', () => {
+        stream.getAudioTracks()[0].enabled = !(stream.getAudioTracks()[0].enabled);
+    })
+
+    const videoMute = document.getElementById('video-mute');
+    videoMute.addEventListener('click', () => {
+        stream.getVideoTracks()[0].enabled = !(stream.getVideoTracks()[0].enabled);
+    })
+
 });
 
 // Listen for user disconnected

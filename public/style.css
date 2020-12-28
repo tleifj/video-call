@@ -1,3 +1,60 @@
 body {
-    /* background: red; */
+    background: rgb(0, 12, 17);
+}
+
+.button {
+    padding: 10px 15px;
+    background: rgb(40, 136, 192);
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+}
+
+#video-grid {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 300px; */
+    display: flex;
+    justify-content: center;
+}
+
+#video-grid video {
+    max-width: 768px;
+    height: 100%;
+    object-fit: cover;
+}
+
+#video-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-bottom: 30px;
+}
+.video-control {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.video-control:hover {
+    cursor: pointer;
+}
+
+.video-control svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 3px));}
+
+.video-control svg path {
+fill: #fff;
 }

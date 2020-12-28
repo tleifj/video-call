@@ -15,20 +15,14 @@
 
     <title>Document</title>
     <style>
-        #video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 300px);
-            grid-auto-rows: 300px;
-        }
-
-        video {
-            width: 300px;
-            height: 100%;
-            object-fit: cover;
-        }
+       
     </style>
 </head>
 <body>
     <div id="video-grid"></div>
+    <div id="video-controls">
+        <div class="video-control" id="audio-mute"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 48 60" style="enable-background:new 0 0 48 48;" xml:space="preserve"><g><path d="M17.12,9.22v13.76c0,3.78,3.1,6.88,6.88,6.88s6.88-3.1,6.88-6.88V9.22c0-3.78-3.1-6.88-6.88-6.88S17.12,5.43,17.12,9.22z"/><path d="M21.94,38.01v5.59c0,1.14,0.92,2.06,2.06,2.06s2.06-0.92,2.06-2.06v-5.59c7.84-1.02,13.91-7.72,13.91-15.83   c0-1.14-0.92-2.06-2.06-2.06s-2.06,0.92-2.06,2.06c0,6.53-5.31,11.85-11.85,11.85s-11.85-5.31-11.85-11.85   c0-1.14-0.92-2.06-2.06-2.06s-2.06,0.92-2.06,2.06C8.02,30.29,14.1,36.99,21.94,38.01z"/></g></svg></div>
+        <div class="video-control" id="video-mute"><svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.3499999 7.93750025" version="1.1" x="0px" y="0px"><g transform="translate(0,-290.64999)"><path style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="M 4.0019531 4.0019531 C 2.3572125 4.0019531 0.99609371 5.3553008 0.99609375 7 L 0.99609375 17.001953 C 0.99609375 18.646652 2.3572125 20 4.0019531 20 L 14.003906 20 C 15.648647 20 17 18.646652 17 17.001953 L 17 16.246094 L 17.878906 17.126953 C 18.793502 18.041561 20.117393 18.198659 21.148438 17.769531 C 22.179482 17.340441 22.994141 16.294627 22.994141 15.001953 L 22.994141 9.0078125 C 22.994141 7.330685 21.587973 5.9538275 19.908203 6.0039062 C 19.145038 6.0265834 18.418889 6.3410673 17.878906 6.8808594 L 17 7.7597656 L 17 7 C 17 5.3553008 15.648647 4.0019531 14.003906 4.0019531 L 4.0019531 4.0019531 z M 4.0019531 6.0039062 L 14.003906 6.0039062 C 14.575209 6.0039062 15 6.4287244 15 7 L 15 17.001953 C 15 17.573229 14.575209 17.998047 14.003906 17.998047 L 4.0019531 17.998047 C 3.4306501 17.998047 2.9960937 17.573229 2.9960938 17.001953 L 2.9960938 7 C 2.9960938 6.4287244 3.4306501 6.0039062 4.0019531 6.0039062 z M 19.96875 8.0039062 C 20.545614 7.9850086 21.001953 8.4293936 21.001953 9.0078125 L 21.001953 15.001953 C 21.001953 15.487811 20.740476 15.774159 20.380859 15.923828 C 20.021241 16.073497 19.639939 16.053741 19.296875 15.710938 L 17 13.421875 L 17 10.587891 L 19.296875 8.2910156 C 19.475756 8.112244 19.713636 8.0114653 19.96875 8.0039062 z " transform="matrix(0.26458334,0,0,0.26458334,0,290.64999)"/></g></svg></div>
+    </div>
 </body>
 </html>
